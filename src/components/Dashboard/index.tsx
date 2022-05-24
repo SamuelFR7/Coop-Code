@@ -19,6 +19,26 @@ function Dashboard() {
   const [secondsAmount, setSecondsAmount] = useState(COUNTDOWN_INITIAL_TIME)
   const [userOne, setUserOne] = useState<IUser>()
   const [userTwo, setUserTwo] = useState<IUser>()
+  const [language, setLanguage] = useState('JS')
+  const [code, setCode] = useState('')
+
+  useEffect(() => {
+    function setInitialCode() {
+      if (language === 'JS') {
+        setCode('function hello() {\n\n}')
+      } else if (language === 'JAVA') {
+        setCode(
+          'class App {\n  public static void main(String[] args) {\n\n  }\n}'
+        )
+      } else if (language === 'C') {
+        setCode('void main() {\n\n}')
+      } else if (language === 'VISUALG') {
+        setCode('algoritmo\n\n  var\n\n  inicio\n\nfimalgoritmo')
+      }
+    }
+
+    setInitialCode()
+  }, [language])
 
   useEffect(() => {
     async function getUsersImage() {
@@ -73,7 +93,17 @@ function Dashboard() {
         </UserContainer>
       </CountdownContainer>
       <CodeArea>
-        <textarea disabled={secondsAmount === 0}></textarea>
+        <select onChange={(e) => setLanguage(e.target.value)}>
+          <option value={'JS'}>JavaScript</option>
+          <option value={'JAVA'}>Java</option>
+          <option value={'C'}>C</option>
+          <option value={'VISUALG'}>Visualg</option>
+        </select>
+        <textarea
+          disabled={secondsAmount === 0}
+          value={code}
+          onChange={(e) => setCode(e.target.value)}
+        />
       </CodeArea>
     </DashboardContainer>
   )

@@ -38,13 +38,23 @@ export const Countdown = styled.div`
 export const CodeArea = styled.div`
   padding: 4rem 0;
   display: flex;
+  flex-direction: column;
+
+  select {
+    border: 1px solid #d7d7d7;
+    font-weight: 400;
+    font-size: 1rem;
+  }
 
   textarea {
+    background: #282a36;
+    color: #f8f8f2;
     border: 1px solid #d7d7d7;
     height: 80vh;
     width: 60vw;
     padding: 0.3rem 0.5rem;
     resize: none;
     font-size: 1.5rem;
+    margin-top: 0.5rem;
   }
 `
