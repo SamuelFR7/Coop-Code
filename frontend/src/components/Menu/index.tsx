@@ -1,6 +1,6 @@
 import React, { FormEvent } from 'react'
 import { useRouter } from 'next/router'
-import { useConfig } from '../hooks/useConfig'
+import { useConfig } from '../../hooks/useConfig'
 import {
   FormBox,
   MenuContainer,
@@ -9,7 +9,7 @@ import {
   TimeBox,
   TimeInputBox,
 } from './styles'
-import Logo from '../../assets/Logo.svg'
+import Logo from '../../assets/NewLogo.svg'
 
 function Menu() {
   const {
@@ -30,7 +30,7 @@ function Menu() {
 
   return (
     <MenuContainer>
-      <Logo width={256} height={256} />
+      <Logo width={250} height={250} />
       <MenuContent>
         <MenuForm onSubmit={handleSubmit}>
           <h1>Configurar Sala</h1>

@@ -7,7 +7,7 @@ import {
   DashboardContainer,
   UserContainer,
 } from './styles'
-import { useConfig } from '../hooks/useConfig'
+import { useConfig } from '../../hooks/useConfig'
 
 interface IUser {
   avatar: string

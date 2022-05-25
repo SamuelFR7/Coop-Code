@@ -3,13 +3,13 @@ import { theme } from '../../styles/Theme'
 
 export const MenuContainer = styled.div`
   background: ${theme.colors.background};
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 `
 
 export const MenuContent = styled.div`
-  height: 100vh;
   display: flex;
   justify-content: center;
 `
@@ -18,7 +18,6 @@ export const MenuForm = styled.form`
   background: #f5f5f5;
   padding: 2rem;
   border-radius: 1rem;
-  height: 30rem;
 `
 
 export const FormBox = styled.div`
