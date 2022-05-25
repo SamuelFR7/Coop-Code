@@ -1,19 +1,12 @@
 import styled from 'styled-components'
+import { theme } from '../../styles/Theme'
 
 export const DashboardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(
-    to right top,
-    #845ec2,
-    #2c73d2,
-    #008e9b,
-    #0089ba,
-    #0081cf,
-    #008f7a
-  );
+  background: ${theme.colors.background};
 `
 
 export const CountdownContainer = styled.div`
@@ -24,6 +17,23 @@ export const CountdownContainer = styled.div`
   background: #f5f5f5;
   border-radius: 1rem;
   margin-top: 1.5rem;
+
+  .yourTime {
+    img {
+      border: 3px solid ${theme.colors.green};
+    }
+  }
+
+  .notYourTime {
+    img {
+      border: 3px solid red;
+      opacity: 30%;
+    }
+
+    span {
+      opacity: 30%;
+    }
+  }
 `
 
 export const UserContainer = styled.div`
@@ -53,7 +63,7 @@ export const CodeArea = styled.div`
   flex-direction: column;
 
   textarea {
-    background: #282a36;
+    background: ${theme.colors.textarea};
     color: #f8f8f2;
     border: 1px solid #d7d7d7;
     border-radius: 1rem;
@@ -63,5 +73,9 @@ export const CodeArea = styled.div`
     resize: none;
     font-size: 1.5rem;
     margin-top: 0.5rem;
+  }
+
+  .disabled {
+    cursor: not-allowed;
   }
 `

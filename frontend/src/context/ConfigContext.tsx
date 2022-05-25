@@ -11,6 +11,8 @@ interface IConfigContextData {
   setMinutes: React.Dispatch<React.SetStateAction<number>>
   language: string
   setLanguage: React.Dispatch<React.SetStateAction<string>>
+  secondsAmount: number
+  setSecondsAmount: React.Dispatch<React.SetStateAction<number>>
 }
 
 export const ConfigContext = createContext<IConfigContextData>(
@@ -21,6 +23,8 @@ export function ConfigProvider({ children }: IConfigProviderProps) {
   const [seconds, setSeconds] = useState(0)
   const [minutes, setMinutes] = useState(3)
   const [language, setLanguage] = useState('JS')
+  const [secondsAmount, setSecondsAmount] = useState(180)
+
   return (
     <ConfigContext.Provider
       value={{
@@ -30,6 +34,8 @@ export function ConfigProvider({ children }: IConfigProviderProps) {
         setMinutes,
         language,
         setLanguage,
+        secondsAmount,
+        setSecondsAmount,
       }}
     >
       {children}

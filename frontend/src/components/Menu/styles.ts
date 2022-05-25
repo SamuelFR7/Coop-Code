@@ -2,16 +2,7 @@ import styled from 'styled-components'
 import { theme } from '../../styles/Theme'
 
 export const MenuContainer = styled.div`
-  background-image: linear-gradient(
-    to right top,
-    #845ec2,
-    #2c73d2,
-    #008e9b,
-    #0089ba,
-    #0081cf,
-    #008f7a
-  );
-
+  background: ${theme.colors.background};
   display: flex;
   flex-direction: column;
   align-items: center;

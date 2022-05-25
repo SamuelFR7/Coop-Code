@@ -9,18 +9,17 @@ import {
 } from './styles'
 import { useConfig } from '../hooks/useConfig'
 
-const COUNTDOWN_INITIAL_TIME = 3 * 60
-
 interface IUser {
   avatar: string
   name: string
 }
 
 function Dashboard() {
-  const { seconds, minutes, language } = useConfig()
-  const [secondsAmount, setSecondsAmount] = useState(COUNTDOWN_INITIAL_TIME)
+  const { seconds, minutes, language, secondsAmount, setSecondsAmount } =
+    useConfig()
   const [userOne, setUserOne] = useState<IUser>()
   const [userTwo, setUserTwo] = useState<IUser>()
+  const [yourTime, setYourtime] = useState<boolean>(true)
   const [code, setCode] = useState('')
 
   useEffect(() => {
@@ -60,13 +59,13 @@ function Dashboard() {
       })
     }
 
-    setSecondsAmount(minutes * 60 + seconds)
     getUsersImage()
   }, [])
 
   useEffect(() => {
     if (secondsAmount === 0) {
-      return
+      setYourtime(!yourTime)
+      setSecondsAmount(minutes * 60 + seconds)
     }
 
     setTimeout(() => {
@@ -80,7 +79,7 @@ function Dashboard() {
   return (
     <DashboardContainer>
       <CountdownContainer>
-        <UserContainer>
+        <UserContainer className={yourTime ? 'yourTime' : 'notYourTime'}>
           <img src={userOne?.avatar} />
           <span>{userOne?.name}</span>
         </UserContainer>
@@ -89,14 +88,15 @@ function Dashboard() {
           <span>:</span>
           <span>{String(secondsToview).padStart(2, '0')}</span>
         </Countdown>
-        <UserContainer>
+        <UserContainer className={!yourTime ? 'yourTime' : 'notYourTime'}>
           <img src={userTwo?.avatar} />
           <span>{userTwo?.name}</span>
         </UserContainer>
       </CountdownContainer>
       <CodeArea>
         <textarea
-          disabled={secondsAmount === 0}
+          disabled={!yourTime}
+          className={!yourTime ? 'disabled' : 'enabled'}
           value={code}
           onChange={(e) => setCode(e.target.value)}
         />

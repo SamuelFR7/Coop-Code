@@ -12,11 +12,19 @@ import {
 import Logo from '../../assets/Logo.svg'
 
 function Menu() {
-  const { minutes, setMinutes, setLanguage, seconds, setSeconds } = useConfig()
+  const {
+    minutes,
+    setMinutes,
+    setLanguage,
+    seconds,
+    setSeconds,
+    setSecondsAmount,
+  } = useConfig()
   const router = useRouter()
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault()
+    setSecondsAmount(minutes * 60 + seconds)
     router.push('/main')
   }
 
