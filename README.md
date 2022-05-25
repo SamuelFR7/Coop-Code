@@ -25,8 +25,6 @@
 <div align="center">
    <img src="./.github/readme/assets/screen1.png" width="400px">
    <img src="./.github/readme/assets/screen2.png" width="400px">
-   <img src="./.github/readme/assets/screen3.png" width="400px">
-   <img src="./.github/readme/assets/screen4.png" width="400px">
 </div>
 
 # :rocket: Technologies
