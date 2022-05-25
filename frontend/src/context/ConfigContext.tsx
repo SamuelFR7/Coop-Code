@@ -19,7 +19,7 @@ export const ConfigContext = createContext<IConfigContextData>(
 
 export function ConfigProvider({ children }: IConfigProviderProps) {
   const [seconds, setSeconds] = useState(0)
-  const [minutes, setMinutes] = useState(0)
+  const [minutes, setMinutes] = useState(3)
   const [language, setLanguage] = useState('JS')
   return (
     <ConfigContext.Provider

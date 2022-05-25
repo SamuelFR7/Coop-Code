@@ -11,12 +11,15 @@ export const MenuContainer = styled.div`
     #0081cf,
     #008f7a
   );
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 export const MenuContent = styled.div`
   height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
 `
 
@@ -24,6 +27,7 @@ export const MenuForm = styled.form`
   background: #f5f5f5;
   padding: 2rem;
   border-radius: 1rem;
+  height: 30rem;
 `
 
 export const FormBox = styled.div`

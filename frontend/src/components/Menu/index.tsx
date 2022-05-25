@@ -9,6 +9,7 @@ import {
   TimeBox,
   TimeInputBox,
 } from './styles'
+import Logo from '../../assets/Logo.svg'
 
 function Menu() {
   const { minutes, setMinutes, setLanguage, seconds, setSeconds } = useConfig()
@@ -21,6 +22,7 @@ function Menu() {
 
   return (
     <MenuContainer>
+      <Logo width={256} height={256} />
       <MenuContent>
         <MenuForm onSubmit={handleSubmit}>
           <h1>Configurar Sala</h1>
