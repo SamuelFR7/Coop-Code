@@ -5,7 +5,9 @@ import Dashboard from '../components/Dashboard'
 function Main() {
   return (
     <>
-      <Head>Coop Code</Head>
+      <Head>
+        <title>Coop Code</title>
+      </Head>
       <Dashboard />
     </>
   )

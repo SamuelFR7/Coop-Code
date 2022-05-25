@@ -5,7 +5,9 @@ import { Menu } from '../components/Menu'
 function Login() {
   return (
     <>
-      <Head>Coop Code</Head>
+      <Head>
+        <title>Coop Code</title>
+      </Head>
       <Menu />
     </>
   )
