@@ -5,6 +5,15 @@ export const DashboardContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-image: linear-gradient(
+    to right top,
+    #845ec2,
+    #2c73d2,
+    #008e9b,
+    #0089ba,
+    #0081cf,
+    #008f7a
+  );
 `
 
 export const CountdownContainer = styled.div`
@@ -12,6 +21,9 @@ export const CountdownContainer = styled.div`
   font-size: 36px;
   font-weight: 600;
   display: flex;
+  background: #f5f5f5;
+  border-radius: 1rem;
+  margin-top: 1.5rem;
 `
 
 export const UserContainer = styled.div`
@@ -40,16 +52,11 @@ export const CodeArea = styled.div`
   display: flex;
   flex-direction: column;
 
-  select {
-    border: 1px solid #d7d7d7;
-    font-weight: 400;
-    font-size: 1rem;
-  }
-
   textarea {
     background: #282a36;
     color: #f8f8f2;
     border: 1px solid #d7d7d7;
+    border-radius: 1rem;
     height: 80vh;
     width: 60vw;
     padding: 0.3rem 0.5rem;

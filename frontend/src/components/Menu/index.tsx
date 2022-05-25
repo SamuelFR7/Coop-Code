@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { FormEvent } from 'react'
+import { useRouter } from 'next/router'
+import { useConfig } from '../hooks/useConfig'
 import {
   FormBox,
   MenuContainer,
@@ -9,12 +11,12 @@ import {
 } from './styles'
 
 function Menu() {
-  const [minutes, setMinutes] = useState(0)
-  const [seconds, setSeconds] = useState(0)
-  const [language, setLanguage] = useState('JS')
+  const { minutes, setMinutes, setLanguage, seconds, setSeconds } = useConfig()
+  const router = useRouter()
 
-  function handleSubmit() {
-    console.log('submit')
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault()
+    router.push('/main')
   }
 
   return (

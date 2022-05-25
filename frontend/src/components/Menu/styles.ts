@@ -6,9 +6,9 @@ export const MenuContainer = styled.div`
     to right top,
     #845ec2,
     #2c73d2,
-    #0081cf,
-    #0089ba,
     #008e9b,
+    #0089ba,
+    #0081cf,
     #008f7a
   );
 `

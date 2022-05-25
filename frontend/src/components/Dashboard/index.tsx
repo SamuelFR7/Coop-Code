@@ -7,6 +7,7 @@ import {
   DashboardContainer,
   UserContainer,
 } from './styles'
+import { useConfig } from '../hooks/useConfig'
 
 const COUNTDOWN_INITIAL_TIME = 3 * 60
 
@@ -16,10 +17,10 @@ interface IUser {
 }
 
 function Dashboard() {
+  const { seconds, minutes, language } = useConfig()
   const [secondsAmount, setSecondsAmount] = useState(COUNTDOWN_INITIAL_TIME)
   const [userOne, setUserOne] = useState<IUser>()
   const [userTwo, setUserTwo] = useState<IUser>()
-  const [language, setLanguage] = useState('JS')
   const [code, setCode] = useState('')
 
   useEffect(() => {
@@ -59,6 +60,7 @@ function Dashboard() {
       })
     }
 
+    setSecondsAmount(minutes * 60 + seconds)
     getUsersImage()
   }, [])
 
@@ -72,8 +74,8 @@ function Dashboard() {
     }, 1000)
   }, [secondsAmount])
 
-  const minutes = Math.floor(secondsAmount / 60)
-  const seconds = secondsAmount % 60
+  const minutesToView = Math.floor(secondsAmount / 60)
+  const secondsToview = secondsAmount % 60
 
   return (
     <DashboardContainer>
@@ -83,9 +85,9 @@ function Dashboard() {
           <span>{userOne?.name}</span>
         </UserContainer>
         <Countdown>
-          <span>{String(minutes).padStart(2, '0')}</span>
+          <span>{String(minutesToView).padStart(2, '0')}</span>
           <span>:</span>
-          <span>{String(seconds).padStart(2, '0')}</span>
+          <span>{String(secondsToview).padStart(2, '0')}</span>
         </Countdown>
         <UserContainer>
           <img src={userTwo?.avatar} />
@@ -93,12 +95,6 @@ function Dashboard() {
         </UserContainer>
       </CountdownContainer>
       <CodeArea>
-        <select onChange={(e) => setLanguage(e.target.value)}>
-          <option value={'JS'}>JavaScript</option>
-          <option value={'JAVA'}>Java</option>
-          <option value={'C'}>C</option>
-          <option value={'VISUALG'}>Visualg</option>
-        </select>
         <textarea
           disabled={secondsAmount === 0}
           value={code}
