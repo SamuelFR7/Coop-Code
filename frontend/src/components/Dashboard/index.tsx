@@ -10,6 +10,7 @@ import {
 } from './styles'
 import { useConfig } from '../../hooks/useConfig'
 import { SiJavascript, SiJava, SiC } from 'react-icons/si'
+import { FaRegLightbulb } from 'react-icons/fa'
 
 interface IUser {
   avatar: string
@@ -31,6 +32,8 @@ function Dashboard() {
       return <SiJava size={32} />
     } else if (language === 'C') {
       return <SiC size={32} />
+    } else if (language === 'PORTUGOL') {
+      return <FaRegLightbulb size={32} />
     }
   }
 

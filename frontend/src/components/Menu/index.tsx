@@ -37,13 +37,13 @@ function Menu() {
           <FormBox>
             <h3>Linguagem</h3>
             <select
-              defaultValue={'JS'}
+              defaultValue={'JAVA'}
               onChange={(e) => setLanguage(e.target.value)}
             >
-              <option value={'JS'}>Javascript</option>
               <option value={'JAVA'}>Java</option>
+              <option value={'JS'}>Javascript</option>
               <option value={'C'}>C</option>
-              <option value={'VISUALG'}>Visualg</option>
+              <option value={'PORTUGOL'}>Portugol</option>
             </select>
             <TimeBox>
               <h3>Tempo</h3>
