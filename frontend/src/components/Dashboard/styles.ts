@@ -20,13 +20,13 @@ export const CountdownContainer = styled.div`
 
   .yourTime {
     img {
-      border: 3px solid ${theme.colors.green};
+      border: 3px solid ${theme.colors.yourTime};
     }
   }
 
   .notYourTime {
     img {
-      border: 3px solid red;
+      border: 3px solid ${theme.colors.notYourTime};
       opacity: 30%;
     }
 

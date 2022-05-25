@@ -1,5 +1,4 @@
 import styled, { createGlobalStyle } from 'styled-components'
-import { theme } from './Theme'
 
 const GlobalStyle = createGlobalStyle`
     *, #__next {
@@ -15,11 +14,6 @@ const GlobalStyle = createGlobalStyle`
         @media (max-width: 720px) {
             font-size: 87.5%
         }
-    }
-
-    body {
-        background-color: ${theme.colors.bg};
-        color: ${theme.colors.text}
     }
 
     body, input, textarea, button, select {
