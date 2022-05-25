@@ -57,8 +57,21 @@ export const Countdown = styled.div`
   padding: 1rem 4rem;
 `
 
+export const QuestionBox = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+
+  p {
+    margin-left: 1rem;
+  }
+`
+
 export const CodeArea = styled.div`
-  padding: 4rem 0;
+  padding: 2rem 0;
   display: flex;
   flex-direction: column;
 
@@ -67,7 +80,7 @@ export const CodeArea = styled.div`
     color: #f8f8f2;
     border: 1px solid #d7d7d7;
     border-radius: 1rem;
-    height: 80vh;
+    height: 70vh;
     width: 60vw;
     padding: 0.3rem 0.5rem;
     resize: none;

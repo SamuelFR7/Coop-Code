@@ -5,9 +5,11 @@ import {
   Countdown,
   CountdownContainer,
   DashboardContainer,
+  QuestionBox,
   UserContainer,
 } from './styles'
 import { useConfig } from '../../hooks/useConfig'
+import { SiJavascript, SiJava, SiC } from 'react-icons/si'
 
 interface IUser {
   avatar: string
@@ -21,6 +23,16 @@ function Dashboard() {
   const [userTwo, setUserTwo] = useState<IUser>()
   const [yourTime, setYourtime] = useState<boolean>(true)
   const [code, setCode] = useState('')
+
+  const renderLanguageLogo = () => {
+    if (language === 'JS') {
+      return <SiJavascript size={32} />
+    } else if (language === 'JAVA') {
+      return <SiJava size={32} />
+    } else if (language === 'C') {
+      return <SiC size={32} />
+    }
+  }
 
   useEffect(() => {
     function setInitialCode() {
@@ -93,6 +105,13 @@ function Dashboard() {
           <span>{userTwo?.name}</span>
         </UserContainer>
       </CountdownContainer>
+      <QuestionBox>
+        {renderLanguageLogo()}
+        <p>
+          Crie uma função que recebe um numero por parâmetro <br /> e retorne
+          true caso seja par e false caso seja impar
+        </p>
+      </QuestionBox>
       <CodeArea>
         <textarea
           disabled={!yourTime}
