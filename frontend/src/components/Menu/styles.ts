@@ -41,7 +41,7 @@ export const FormBox = styled.div`
     padding: 0 1.5rem;
     height: 4rem;
     background: ${theme.colors.primary};
-    color: #fff;
+    color: #f5f5f5;
     border-radius: 0.25rem;
     border: 0;
     font-size: 1rem;
