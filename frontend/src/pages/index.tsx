@@ -1,10 +1,10 @@
 import React from 'react'
-import Dashboard from '../components/Dashboard'
+import { Menu } from '../components/Menu'
 
 function Login() {
   return (
     <>
-      <Dashboard />
+      <Menu />
     </>
   )
 }
