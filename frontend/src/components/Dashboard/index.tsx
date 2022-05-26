@@ -80,7 +80,7 @@ function Dashboard() {
   useEffect(() => {
     if (secondsAmount === 0) {
       setYourtime(!yourTime)
-      setSecondsAmount(minutes * 60 + seconds)
+      return setSecondsAmount(minutes * 60 + seconds)
     }
 
     setTimeout(() => {

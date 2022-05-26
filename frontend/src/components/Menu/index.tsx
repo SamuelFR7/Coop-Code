@@ -24,7 +24,14 @@ function Menu() {
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault()
-    setSecondsAmount(minutes * 60 + seconds)
+
+    const secondsToSet = minutes * 60 + seconds
+    if (secondsToSet < 1) {
+      setSecondsAmount(180)
+    } else {
+      setSecondsAmount(minutes * 60 + seconds)
+    }
+
     router.push('/main')
   }
 
